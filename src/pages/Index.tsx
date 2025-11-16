@@ -66,47 +66,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
-      {/* Skills Section */}
-      <section className="container mx-auto px-6 py-20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            What I <span className="text-primary">Do</span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 bg-card border border-border rounded-lg hover:border-primary/50 transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Gamepad2 className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">Game Development</h3>
-              <p className="text-muted-foreground">
-                Building engaging gameplay mechanics, immersive worlds, and polished player experiences across multiple platforms.
-              </p>
-            </div>
-            
-            <div className="p-8 bg-card border border-border rounded-lg hover:border-primary/50 transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">Software Engineering</h3>
-              <p className="text-muted-foreground">
-                Writing clean, efficient code with expertise in C#, C++, and modern game engine architectures.
-              </p>
-            </div>
-            
-            <div className="p-8 bg-card border border-border rounded-lg hover:border-primary/50 transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Sparkles className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">Creative Design</h3>
-              <p className="text-muted-foreground">
-                Crafting visual effects, UI/UX design, and creating cohesive art direction for memorable gaming experiences.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
