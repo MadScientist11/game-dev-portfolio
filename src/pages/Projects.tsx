@@ -3,43 +3,9 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { workProjects, petProjects, Project } from "@/data/projects";
 
-const workProjects = [
-  {
-    id: "fantasy-rpg",
-    title: "Fantasy RPG Adventure",
-    company: "Game Studio Name",
-    role: "Senior Game Developer",
-    period: "2022 - 2024",
-    description: "An immersive open-world RPG with dynamic quest systems and procedurally generated dungeons.",
-    technologies: ["Unity", "C#", "AI Pathfinding", "Shader Graph"],
-    image: "/placeholder.svg",
-  },
-  {
-    id: "space-strategy",
-    title: "Space Strategy Simulator",
-    company: "Another Studio",
-    role: "Lead Programmer",
-    period: "2020 - 2022",
-    description: "Real-time strategy game set in space with complex resource management and faction diplomacy.",
-    technologies: ["Unreal Engine", "C++", "Multiplayer", "UI/UX"],
-    image: "/placeholder.svg",
-  },
-];
-
-const petProjects = [
-  {
-    id: "indie-platformer",
-    title: "Indie Platformer",
-    role: "Solo Developer",
-    period: "2023 - Present",
-    description: "A passion project platformer with unique movement mechanics and handcrafted levels.",
-    technologies: ["Unity", "C#", "Shader Lab", "ProBuilder"],
-    image: "/placeholder.svg",
-  },
-];
-
-const ProjectCard = ({ project, showCompany = true }: { project: any; showCompany?: boolean }) => (
+const ProjectCard = ({ project, showCompany = true }: { project: Project; showCompany?: boolean }) => (
   <Link to={`/projects/${project.id}`}>
     <Card className="group bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] overflow-hidden cursor-pointer">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
