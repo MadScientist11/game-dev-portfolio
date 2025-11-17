@@ -62,8 +62,6 @@ const ProjectDetail = () => {
                     <span>{project.company}</span>
                   </>
                 )}
-                <span>•</span>
-                <span>{project.period}</span>
               </div>
             </div>
 

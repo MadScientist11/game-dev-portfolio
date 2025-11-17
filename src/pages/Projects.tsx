@@ -34,8 +34,6 @@ const ProjectCard = ({ project, showCompany = true }: { project: Project; showCo
                     <span>{project.company}</span>
                   </>
                 )}
-                <span>•</span>
-                <span>{project.period}</span>
               </div>
             </div>
 
