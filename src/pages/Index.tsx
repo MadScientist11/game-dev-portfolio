@@ -11,9 +11,13 @@ const Index = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-6 pt-32 pb-20 min-h-screen flex items-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-12">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Hi, I'm <span className="text-primary">Your Name</span>
           </h1>
+          
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12">
+            I'm a game developer who loves technical challenges.
+          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
