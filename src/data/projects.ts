@@ -20,7 +20,7 @@ export const workProjects: Project[] = [
     responsibilities: [
       "Was responsible for ensuring compliance with Technical Requirements Checklists (TRCs/Lotcheck/XRs) on PS4, PS5, Nintendo Switch, and Xbox platforms.",
       "Contributed to the integration of Epic Online Services (EOS) assisting with debugging and resolving issues and crashes in core multiplayer systems.",
-      "Assisted with the integration of Steam, GOG, and Epic Games Store (EGS) SDKs."
+      "Assisted with the integration of Steam, GOG, and Epic Games Store (EGS) SDKs."// worked on consoles fixing crahses and ensure cross platform compatibility
     ],
     technologies: ["Unity", "Epic Online Services", "Steam", "GOG", "EGS"],
     image: "/placeholder.svg",
@@ -31,14 +31,28 @@ export const workProjects: Project[] = [
     title: "Cramagram",
     company: "PlayJoy Studios",
     role: "Unity Developer",
-    description: "Real-time strategy game set in space with complex resource management and faction diplomacy.",
+    description: "",
     responsibilities: [
-      "Led a team of 5 programmers in developing the core gameplay systems",
-      "Architected and implemented multiplayer netcode using Unreal Engine's replication system",
-      "Created a robust UI framework that supported modding and localization",
-      "Optimized game performance for large-scale battles with 100+ units on screen"
+      "Developed the game based on the GDD for Android and iOS platforms.",
+      "Integrated Unity IAP, Applovin, Firebase SDKs.",
+      "Managed testing and release process on Google Play and App Store."
     ],
-    technologies: ["Unreal Engine", "C++", "Multiplayer", "UI/UX"],
+    technologies: ["Unity", "IAP", "Applovin", "Firebase Services"],
+    image: "/placeholder.svg",
+    link: "",
+  },
+  {
+    id: "pj-general",
+    title: "General",
+    company: "PlayJoy Studios",
+    role: "Unity Developer",
+    description: "Ported several games to mobile platforms, ",
+    responsibilities: [
+      "Set up and maintained CI/CD pipelines in TeamCity for automated builds and deployments for iOS and Android platforms.",
+      "Ported several games including Looking For Aliens, Metal Slug Tactics to mobile platforms.",
+      "Supported and kept multiple projects up to date to remain compliant with store requirements."
+    ],
+    technologies: ["Unity", "Firebase", "Google Play Games", "Game Center"],
     image: "/placeholder.svg",
     link: "",
   },
@@ -46,10 +60,10 @@ export const workProjects: Project[] = [
 
 export const petProjects: Project[] = [
   {
-    id: "indie-platformer",
-    title: "Indie Platformer",
-    role: "Solo Developer",
-    description: "A passion project platformer with unique movement mechanics and handcrafted levels.",
+    id: "souls-like",
+    title: "Souls Like",
+    role: "Unity Developer",
+    description: "",
     responsibilities: [
       "Designed and implemented custom character controller with advanced movement mechanics",
       "Created level design tools to streamline the development process",
