@@ -8,6 +8,8 @@ export interface Project {
   technologies: string[];
   image: string;
   link?: string;
+  iosLink?: string;
+  androidLink?: string;
 }
 
 export const workProjects: Project[] = [

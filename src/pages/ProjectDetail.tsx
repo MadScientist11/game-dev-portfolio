@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, Apple, Store } from "lucide-react";
 import { workProjects, petProjects } from "@/data/projects";
 
 const ProjectDetail = () => {
@@ -96,19 +96,47 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            {project.link && (
-              <div>
-                <Button asChild>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    View Project
-                  </a>
-                </Button>
+            {(project.link || project.iosLink || project.androidLink) && (
+              <div className="flex flex-wrap gap-3">
+                {project.link && (
+                  <Button asChild>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      View Project
+                    </a>
+                  </Button>
+                )}
+                {project.iosLink && (
+                  <Button asChild variant="outline">
+                    <a
+                      href={project.iosLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <Apple className="w-4 h-4" />
+                      iOS App Store
+                    </a>
+                  </Button>
+                )}
+                {project.androidLink && (
+                  <Button asChild variant="outline">
+                    <a
+                      href={project.androidLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <Store className="w-4 h-4" />
+                      Google Play
+                    </a>
+                  </Button>
+                )}
               </div>
             )}
           </div>
