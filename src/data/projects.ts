@@ -46,7 +46,7 @@ export const workProjects: Project[] = [
     title: "Mobile Porting",
     company: "PlayJoy Studios",
     role: "Unity Developer",
-    description: "Full-cycle mobile porting: Looking For Aliens, Metal Slug Tactics. Also supported multiple mobile titles with intergrations, publishing, and post-release maintenance.",
+    description: "Full-cycle mobile porting: Looking For Aliens, Metal Slug Tactics, Beholder: Conductor. Also supported multiple mobile titles with intergrations, publishing, and post-release maintenance.",
     responsibilities: [
       "Full‑cycle mobile porting for multiple PC projects.",
       "Optimized performance, memory usage, and build size for mobile hardware.",
@@ -64,7 +64,7 @@ export const petProjects: Project[] = [
     id: "souls-like",
     title: "Souls Like",
     role: "Unity Developer",
-    description: "",
+    description: "A pet project of mine.",
     responsibilities: [
       "Designed and implemented custom character controller with advanced movement mechanics",
       "Created level design tools to streamline the development process",
