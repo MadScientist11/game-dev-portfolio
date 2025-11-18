@@ -23,7 +23,7 @@ export const workProjects: Project[] = [
     title: "Biped 2",
     company: "PlayJoy Studios",
     role: "Unity Developer",
-    description: "",
+    description: "Biped 2 is a coop action adventure game with a strong focus on moment-to-moment collaboration alone or between 2 or 4 players. Available on consoles and PC.",
     responsibilities: [
       "Was responsible for ensuring compliance with Technical Requirements Checklists (TRCs/Lotcheck/XRs) on PS4, PS5, Nintendo Switch, and Xbox platforms.",
       "Contributed to the integration of Epic Online Services (EOS) assisting with debugging and resolving issues and crashes in core multiplayer systems.",
@@ -38,7 +38,7 @@ export const workProjects: Project[] = [
     title: "Cramagram",
     company: "PlayJoy Studios",
     role: "Unity Developer",
-    description: "",
+    description: "Cramagram is a word puzzle game combining anagram and crossword elements.",
     responsibilities: [
       "Developed the game based on the GDD for Android and iOS platforms.",
       "Integrated Unity IAP, Applovin, Firebase SDKs.",
