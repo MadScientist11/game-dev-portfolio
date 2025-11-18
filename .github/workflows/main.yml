@@ -29,7 +29,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "dist/*"
-          target: "/var/www/your_site_folder"
+          target: "/var/www/portfolio"
 
       - name: Restart server (optional)
         uses: appleboy/ssh-action@v0.1.7
