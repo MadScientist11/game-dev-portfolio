@@ -12,7 +12,7 @@ const Index = () => {
       <section className="container mx-auto px-6 pt-32 pb-20 min-h-screen flex items-center">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Hi, I'm <span className="text-primary">Your Name</span>
+            Hi, I'm <span className="text-primary">Alex Rohach</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12">
@@ -36,7 +36,7 @@ const Index = () => {
               size="lg"
               className="border-border hover:border-primary hover:text-primary"
             >
-              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/cv.pdf" download="Alex Rohach CV.pdf">
                 Download CV
               </a>
             </Button>

@@ -23,7 +23,7 @@ export const workProjects: Project[] = [
       "Assisted with the integration of Steam, GOG, and Epic Games Store (EGS) SDKs."// worked on consoles fixing crahses and ensure cross platform compatibility
     ],
     technologies: ["Unity", "Epic Online Services", "Steam", "GOG", "EGS"],
-    image: "/placeholder.svg",
+    image: "/biped.png",
     link: "",
   },
   {
@@ -37,23 +37,24 @@ export const workProjects: Project[] = [
       "Integrated Unity IAP, Applovin, Firebase SDKs.",
       "Managed testing and release process on Google Play and App Store."
     ],
-    technologies: ["Unity", "IAP", "Applovin", "Firebase Services"],
+    technologies: ["Unity", "IAP", "Applovin", "Firebase"],
     image: "/placeholder.svg",
     link: "",
   },
   {
-    id: "pj-general",
-    title: "General",
+    id: "pj-porting",
+    title: "Mobile Porting",
     company: "PlayJoy Studios",
     role: "Unity Developer",
-    description: "Ported several games to mobile platforms, ",
+    description: "Full-cycle mobile porting: Looking For Aliens, Metal Slug Tactics. Also supported multiple mobile titles with intergrations, publishing, and post-release maintenance.",
     responsibilities: [
+      "Full‑cycle mobile porting for multiple PC projects.",
+      "Optimized performance, memory usage, and build size for mobile hardware.",
       "Set up and maintained CI/CD pipelines in TeamCity for automated builds and deployments for iOS and Android platforms.",
-      "Ported several games including Looking For Aliens, Metal Slug Tactics to mobile platforms.",
-      "Supported and kept multiple projects up to date to remain compliant with store requirements."
+      "Supported and kept multiple projects up to date to remain compliant with store requirements.",
     ],
     technologies: ["Unity", "Firebase", "Google Play Games", "Game Center"],
-    image: "/placeholder.svg",
+    image: "/beholder.jpg",
     link: "",
   },
 ];
