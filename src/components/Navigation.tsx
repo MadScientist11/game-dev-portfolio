@@ -34,15 +34,30 @@ const Navigation = () => {
             >
               Projects
             </Link>
-            <a
-              href="/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+            <button
+              onClick={async () => {
+                try {
+                  const fileName = 'Alex Rohach CV.pdf';
+                  const response = await fetch(`/${encodeURIComponent(fileName)}`);
+                  if (!response.ok) throw new Error('Failed to fetch CV');
+                  const blob = await response.blob();
+                  const url = window.URL.createObjectURL(blob);
+                  const link = document.createElement('a');
+                  link.href = url;
+                  link.download = fileName;
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                  window.URL.revokeObjectURL(url);
+                } catch (error) {
+                  console.error('Error downloading CV:', error);
+                }
+              }}
+              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
             >
               <FileText className="w-4 h-4" />
               CV
-            </a>
+            </button>
           </div>
         </div>
       </div>
