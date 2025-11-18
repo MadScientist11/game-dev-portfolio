@@ -31,14 +31,29 @@ const Index = () => {
               </Link>
             </Button>
             <Button 
-              asChild
               variant="outline"
               size="lg"
               className="border-border hover:border-primary hover:text-primary"
+              onClick={async () => {
+                try {
+                  const fileName = 'Alex Rohach CV.pdf';
+                  const response = await fetch(`/${encodeURIComponent(fileName)}`);
+                  if (!response.ok) throw new Error('Failed to fetch CV');
+                  const blob = await response.blob();
+                  const url = window.URL.createObjectURL(blob);
+                  const link = document.createElement('a');
+                  link.href = url;
+                  link.download = fileName;
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                  window.URL.revokeObjectURL(url);
+                } catch (error) {
+                  console.error('Error downloading CV:', error);
+                }
+              }}
             >
-              <a href="/cv.pdf" download="Alex Rohach CV.pdf">
-                Download CV
-              </a>
+              Download CV
             </Button>
           </div>
         </div>
