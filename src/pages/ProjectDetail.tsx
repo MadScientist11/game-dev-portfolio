@@ -2,8 +2,9 @@ import { useParams, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Apple, Store } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { workProjects, petProjects } from "@/data/projects";
+import { DescriptionWithLinks } from "@/components/DescriptionWithLinks";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -65,9 +66,11 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {project.description}
-            </p>
+            <DescriptionWithLinks 
+              description={project.description}
+              storeLinks={project.storeLinks}
+              className="text-lg text-muted-foreground leading-relaxed"
+            />
 
             <div>
               <h2 className="text-2xl font-bold mb-4 text-foreground">Key Contributions</h2>
@@ -96,47 +99,19 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            {(project.link || project.iosLink || project.androidLink) && (
-              <div className="flex flex-wrap gap-3">
-                {project.link && (
-                  <Button asChild>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      View Project
-                    </a>
-                  </Button>
-                )}
-                {project.iosLink && (
-                  <Button asChild variant="outline">
-                    <a
-                      href={project.iosLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <Apple className="w-4 h-4" />
-                      iOS App Store
-                    </a>
-                  </Button>
-                )}
-                {project.androidLink && (
-                  <Button asChild variant="outline">
-                    <a
-                      href={project.androidLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <Store className="w-4 h-4" />
-                      Google Play
-                    </a>
-                  </Button>
-                )}
+            {project.link && (
+              <div>
+                <Button asChild>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    View Project
+                  </a>
+                </Button>
               </div>
             )}
           </div>
