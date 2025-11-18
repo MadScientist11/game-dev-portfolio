@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { workProjects, petProjects, Project } from "@/data/projects";
+import { workProjects, Project } from "@/data/projects";
 import { DescriptionWithLinks } from "@/components/DescriptionWithLinks";
 
 const ProjectCard = ({ project, showCompany = true }: { project: Project; showCompany?: boolean }) => (
@@ -83,7 +83,7 @@ const Projects = () => {
               <span className="text-primary">Projects</span>
             </h2>
             <div className="space-y-6">
-              {[...workProjects, ...petProjects].map((project) => (
+              {workProjects.map((project) => (
                 <ProjectCard key={project.id} project={project} showCompany={!!project.company} />
               ))}
             </div>

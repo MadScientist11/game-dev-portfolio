@@ -3,12 +3,12 @@ import Navigation from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { workProjects, petProjects } from "@/data/projects";
+import { workProjects } from "@/data/projects";
 import { DescriptionWithLinks } from "@/components/DescriptionWithLinks";
 
 const ProjectDetail = () => {
   const { id } = useParams();
-  const project = [...workProjects, ...petProjects].find(p => p.id === id);
+  const project = workProjects.find(p => p.id === id);
 
   if (!project) {
     return (

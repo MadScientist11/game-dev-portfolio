@@ -71,9 +71,6 @@ export const workProjects: Project[] = [
       }
     ]
   },
-];
-
-export const petProjects: Project[] = [
   {
     id: "souls-like",
     title: "Souls Like",
