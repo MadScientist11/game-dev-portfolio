@@ -45,7 +45,7 @@ export const workProjects: Project[] = [
       "Managed testing and release process on Google Play and App Store."
     ],
     technologies: ["Unity", "IAP", "Applovin", "Firebase"],
-    image: "/placeholder.svg",
+    image: "/cramagram.png",
     link: "",
   },
   {
