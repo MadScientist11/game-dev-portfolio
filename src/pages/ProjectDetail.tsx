@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { workProjects, petProjects } from "@/data/projects";
+import { DescriptionWithLinks } from "@/components/DescriptionWithLinks";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -65,9 +66,11 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {project.description}
-            </p>
+            <DescriptionWithLinks 
+              description={project.description}
+              storeLinks={project.storeLinks}
+              className="text-lg text-muted-foreground leading-relaxed"
+            />
 
             <div>
               <h2 className="text-2xl font-bold mb-4 text-foreground">Key Contributions</h2>

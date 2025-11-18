@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { workProjects, petProjects, Project } from "@/data/projects";
+import { DescriptionWithLinks } from "@/components/DescriptionWithLinks";
 
 const ProjectCard = ({ project, showCompany = true }: { project: Project; showCompany?: boolean }) => (
   <Link to={`/projects/${project.id}`}>
@@ -37,9 +38,11 @@ const ProjectCard = ({ project, showCompany = true }: { project: Project; showCo
               </div>
             </div>
 
-            <p className="text-muted-foreground leading-relaxed line-clamp-2">
-              {project.description}
-            </p>
+            <DescriptionWithLinks 
+              description={project.description}
+              storeLinks={project.storeLinks}
+              className="text-muted-foreground leading-relaxed line-clamp-2"
+            />
 
             <div className="flex flex-wrap gap-2">
               {project.technologies.slice(0, 4).map((tech: string) => (

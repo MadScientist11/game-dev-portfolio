@@ -1,0 +1,87 @@
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Button } from "@/components/ui/button";
+import { Apple, Store } from "lucide-react";
+import { StoreLink } from "@/data/projects";
+
+interface DescriptionWithLinksProps {
+  description: string;
+  storeLinks?: StoreLink[];
+  className?: string;
+}
+
+export const DescriptionWithLinks = ({ description, storeLinks, className }: DescriptionWithLinksProps) => {
+  if (!storeLinks || storeLinks.length === 0) {
+    return <p className={className}>{description}</p>;
+  }
+
+  // Split description into parts and render with hover cards for matched phrases
+  const renderDescription = () => {
+    let remaining = description;
+    const elements: JSX.Element[] = [];
+    let key = 0;
+
+    while (remaining.length > 0) {
+      // Find the earliest matching store link in the remaining text
+      let earliestMatch: { link: StoreLink; index: number } | null = null;
+
+      for (const link of storeLinks) {
+        const index = remaining.indexOf(link.text);
+        if (index !== -1 && (!earliestMatch || index < earliestMatch.index)) {
+          earliestMatch = { link, index };
+        }
+      }
+
+      if (!earliestMatch) {
+        // No more matches, add the rest as plain text
+        elements.push(<span key={key++}>{remaining}</span>);
+        break;
+      }
+
+      // Add text before the match
+      if (earliestMatch.index > 0) {
+        elements.push(<span key={key++}>{remaining.substring(0, earliestMatch.index)}</span>);
+      }
+
+      // Add the matched text with hover card
+      elements.push(
+        <HoverCard key={key++} openDelay={200}>
+          <HoverCardTrigger asChild>
+            <span className="cursor-pointer hover:opacity-80 transition-opacity inline-block relative pb-1 border-b-[3px] border-primary">
+              {earliestMatch.link.text}
+            </span>
+          </HoverCardTrigger>
+          <HoverCardContent className="w-80" onClick={(e) => e.stopPropagation()}>
+            <div className="space-y-3">
+              <h4 className="font-semibold text-sm text-foreground">Download {earliestMatch.link.text}</h4>
+              <div className="flex flex-col gap-2">
+                {earliestMatch.link.iosLink && (
+                  <Button asChild variant="outline" size="sm" className="justify-start">
+                    <a href={earliestMatch.link.iosLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                      <Apple className="w-4 h-4 mr-2" />
+                      iOS App Store
+                    </a>
+                  </Button>
+                )}
+                {earliestMatch.link.androidLink && (
+                  <Button asChild variant="outline" size="sm" className="justify-start">
+                    <a href={earliestMatch.link.androidLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                      <Store className="w-4 h-4 mr-2" />
+                      Google Play
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </div>
+          </HoverCardContent>
+        </HoverCard>
+      );
+
+      // Move past the matched text
+      remaining = remaining.substring(earliestMatch.index + earliestMatch.link.text.length);
+    }
+
+    return elements;
+  };
+
+  return <p className={className}>{renderDescription()}</p>;
+};

@@ -1,3 +1,9 @@
+export interface StoreLink {
+  text: string;
+  iosLink?: string;
+  androidLink?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -8,6 +14,7 @@ export interface Project {
   technologies: string[];
   image: string;
   link?: string;
+  storeLinks?: StoreLink[];
 }
 
 export const workProjects: Project[] = [
@@ -56,6 +63,13 @@ export const workProjects: Project[] = [
     technologies: ["Unity", "Firebase", "Google Play Games", "Game Center"],
     image: "/beholder.jpg",
     link: "",
+    storeLinks: [
+      {
+        text: "Looking For Aliens",
+        iosLink: "https://apps.apple.com/app/looking-for-aliens/id1234567890",
+        androidLink: "https://play.google.com/store/apps/details?id=com.example.aliens"
+      }
+    ]
   },
 ];
 
