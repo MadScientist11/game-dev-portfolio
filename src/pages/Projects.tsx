@@ -75,29 +75,16 @@ const Projects = () => {
             </p>
           </div>
 
-          <div className="space-y-16">
-            <section>
-              <h2 className="text-3xl font-bold mb-8 text-foreground">
-                Work <span className="text-primary">Projects</span>
-              </h2>
-              <div className="space-y-6">
-                {workProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} showCompany={true} />
-                ))}
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-3xl font-bold mb-8 text-foreground">
-                Pet <span className="text-primary">Projects</span>
-              </h2>
-              <div className="space-y-6">
-                {petProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} showCompany={false} />
-                ))}
-              </div>
-            </section>
-          </div>
+          <section>
+            <h2 className="text-3xl font-bold mb-8 text-foreground">
+              <span className="text-primary">Projects</span>
+            </h2>
+            <div className="space-y-6">
+              {[...workProjects, ...petProjects].map((project) => (
+                <ProjectCard key={project.id} project={project} showCompany={!!project.company} />
+              ))}
+            </div>
+          </section>
         </div>
       </main>
     </div>
