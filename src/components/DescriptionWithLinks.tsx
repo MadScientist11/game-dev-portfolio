@@ -46,7 +46,7 @@ export const DescriptionWithLinks = ({ description, storeLinks, className }: Des
       elements.push(
         <HoverCard key={key++} openDelay={200}>
           <HoverCardTrigger asChild>
-            <span className="text-primary underline decoration-dotted cursor-pointer hover:text-primary/80 transition-colors">
+            <span className="cursor-pointer hover:opacity-80 transition-opacity inline-block relative pb-1 border-b-[3px] border-primary">
               {earliestMatch.link.text}
             </span>
           </HoverCardTrigger>
