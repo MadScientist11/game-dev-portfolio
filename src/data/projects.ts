@@ -48,6 +48,14 @@ export const workProjects: Project[] = [
     technologies: ["Unity", "IAP", "Applovin", "Firebase"],
     image: "/cramagram.png",
     link: "",
+    storeLinks: [
+      {
+        text: "Cramagram",
+        iosLink: "https://apps.apple.com/us/app/cramagram-anagram-crossword/id6502916798",
+        androidLink: "https://play.google.com/store/apps/details?id=com.randomlogicgames.cramagram&hl=en",
+        color: "yellow"
+      }
+    ]
   },
   {
     id: "pj-porting",
@@ -67,6 +75,18 @@ export const workProjects: Project[] = [
     storeLinks: [
       {
         text: "Looking For Aliens",
+        iosLink: "https://play.google.com/store/apps/details?id=com.pid.lfa&hl=en",
+        androidLink: "https://apps.apple.com/us/app/looking-for-aliens/id6670402289",
+        color: "blue"
+      },
+      {
+        text: "Metal Slug Tactics",
+        iosLink: "https://play.google.com/store/apps/details?id=com.crunchyroll.gv.metalslugtactics.game&hl=en",
+        androidLink: "https://apps.apple.com/us/app/crunchyroll-metal-slug-tactics/id6742414459",
+        color: "red"
+      },
+      {
+        text: "Beholder: Conductor",
         iosLink: "https://apps.apple.com/app/looking-for-aliens/id1234567890",
         androidLink: "https://play.google.com/store/apps/details?id=com.example.aliens",
         color: "yellow"
