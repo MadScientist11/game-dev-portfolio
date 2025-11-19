@@ -55,27 +55,24 @@ export const DescriptionWithLinks = ({ description, storeLinks, className }: Des
               {earliestMatch.link.text}
             </span>
           </HoverCardTrigger>
-          <HoverCardContent className="w-80" onClick={(e) => e.stopPropagation()}>
-            <div className="space-y-3">
-              <h4 className="font-semibold text-sm text-foreground">Download {earliestMatch.link.text}</h4>
-              <div className="flex flex-col gap-2">
-                {earliestMatch.link.iosLink && (
-                  <Button asChild variant="outline" size="sm" className="justify-start">
-                    <a href={earliestMatch.link.iosLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                      <Apple className="w-4 h-4 mr-2" />
-                      iOS App Store
-                    </a>
-                  </Button>
-                )}
-                {earliestMatch.link.androidLink && (
-                  <Button asChild variant="outline" size="sm" className="justify-start">
-                    <a href={earliestMatch.link.androidLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                      <Store className="w-4 h-4 mr-2" />
-                      Google Play
-                    </a>
-                  </Button>
-                )}
-              </div>
+          <HoverCardContent className="w-fit p-2 bg-card/95 backdrop-blur-sm border-border/50" onClick={(e) => e.stopPropagation()}>
+            <div className="flex flex-col gap-1.5">
+              {earliestMatch.link.iosLink && (
+                <Button asChild variant="ghost" size="sm" className="justify-start hover:bg-primary/10 hover:text-primary transition-colors">
+                  <a href={earliestMatch.link.iosLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                    <Apple className="w-4 h-4 mr-2" />
+                    iOS
+                  </a>
+                </Button>
+              )}
+              {earliestMatch.link.androidLink && (
+                <Button asChild variant="ghost" size="sm" className="justify-start hover:bg-primary/10 hover:text-primary transition-colors">
+                  <a href={earliestMatch.link.androidLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                    <Store className="w-4 h-4 mr-2" />
+                    Android
+                  </a>
+                </Button>
+              )}
             </div>
           </HoverCardContent>
         </HoverCard>
