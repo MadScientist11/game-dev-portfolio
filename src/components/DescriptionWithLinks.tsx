@@ -56,7 +56,7 @@ export const DescriptionWithLinks = ({ description, storeLinks, className }: Des
             </span>
           </HoverCardTrigger>
           <HoverCardContent className="w-fit p-2 bg-card/95 backdrop-blur-sm border-border/50" onClick={(e) => e.stopPropagation()}>
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-row gap-1.5">
               {earliestMatch.link.iosLink && (
                 <Button asChild variant="ghost" size="sm" className="justify-start hover:bg-primary/10 hover:text-primary transition-colors">
                   <a href={earliestMatch.link.iosLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
