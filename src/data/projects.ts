@@ -2,6 +2,7 @@ export interface StoreLink {
   text: string;
   iosLink?: string;
   androidLink?: string;
+  color?: 'yellow' | 'blue' | 'red';
 }
 
 export interface Project {
@@ -67,7 +68,8 @@ export const workProjects: Project[] = [
       {
         text: "Looking For Aliens",
         iosLink: "https://apps.apple.com/app/looking-for-aliens/id1234567890",
-        androidLink: "https://play.google.com/store/apps/details?id=com.example.aliens"
+        androidLink: "https://play.google.com/store/apps/details?id=com.example.aliens",
+        color: "yellow"
       }
     ]
   },

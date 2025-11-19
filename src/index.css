@@ -44,6 +44,11 @@ All colors MUST be HSL.
     --dark-bg: 0 0% 4%;
     --darker-bg: 0 0% 2%;
     
+    /* Link colors */
+    --link-yellow: 45 93% 58%;
+    --link-blue: 217 91% 60%;
+    --link-red: 0 84% 60%;
+    
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 50%));
     
