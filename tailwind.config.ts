@@ -55,6 +55,11 @@ export default {
           DEFAULT: "hsl(var(--dark-bg))",
           darker: "hsl(var(--darker-bg))",
         },
+        link: {
+          yellow: "hsl(var(--link-yellow))",
+          blue: "hsl(var(--link-blue))",
+          red: "hsl(var(--link-red))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

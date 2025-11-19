@@ -43,10 +43,15 @@ export const DescriptionWithLinks = ({ description, storeLinks, className }: Des
       }
 
       // Add the matched text with hover card
+      const colorClass = earliestMatch.link.color === 'yellow' ? 'border-link-yellow' :
+                        earliestMatch.link.color === 'blue' ? 'border-link-blue' :
+                        earliestMatch.link.color === 'red' ? 'border-link-red' :
+                        'border-primary';
+      
       elements.push(
         <HoverCard key={key++} openDelay={200}>
           <HoverCardTrigger asChild>
-            <span className="cursor-pointer hover:opacity-80 transition-opacity inline-block relative pb-1 border-b-[3px] border-primary">
+            <span className={`cursor-pointer hover:opacity-80 transition-opacity inline-block relative border-b-2 ${colorClass}`}>
               {earliestMatch.link.text}
             </span>
           </HoverCardTrigger>
