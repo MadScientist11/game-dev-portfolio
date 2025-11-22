@@ -75,14 +75,14 @@ export const workProjects: Project[] = [
     storeLinks: [
       {
         text: "Looking For Aliens",
-        iosLink: "https://play.google.com/store/apps/details?id=com.pid.lfa&hl=en",
-        androidLink: "https://apps.apple.com/us/app/looking-for-aliens/id6670402289",
+        iosLink: "https://apps.apple.com/us/app/looking-for-aliens/id6670402289",
+        androidLink: "https://play.google.com/store/apps/details?id=com.pid.lfa&hl=en",
         color: "blue"
       },
       {
         text: "Metal Slug Tactics",
-        iosLink: "https://play.google.com/store/apps/details?id=com.crunchyroll.gv.metalslugtactics.game&hl=en",
-        androidLink: "https://apps.apple.com/us/app/crunchyroll-metal-slug-tactics/id6742414459",
+        iosLink: "https://apps.apple.com/us/app/crunchyroll-metal-slug-tactics/id6742414459",
+        androidLink: "https://play.google.com/store/apps/details?id=com.crunchyroll.gv.metalslugtactics.game&hl=en",
         color: "red"
       },
       {
