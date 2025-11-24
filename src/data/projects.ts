@@ -1,7 +1,6 @@
 export interface StoreLink {
   text: string;
-  iosLink?: string;
-  androidLink?: string;
+  links: Array<{ name: string; url: string; }>;
   color?: 'yellow' | 'blue' | 'red';
 }
 
@@ -33,6 +32,16 @@ export const workProjects: Project[] = [
     technologies: ["Unity", "Epic Online Services", "Steam", "GOG", "EGS"],
     image: "/biped.png",
     link: "",
+    storeLinks: [
+      {
+        text: "Biped 2",
+        links: [
+          { name: "Steam", url: "https://store.steampowered.com/app/1726980/Biped_2/" },
+          { name: "Epic", url: "https://store.epicgames.com/en-US/p/biped-2" }
+        ],
+        color: "blue"
+      }
+    ]
   },
   {
     id: "cramagram",
@@ -51,8 +60,10 @@ export const workProjects: Project[] = [
     storeLinks: [
       {
         text: "Cramagram",
-        iosLink: "https://apps.apple.com/us/app/cramagram-anagram-crossword/id6502916798",
-        androidLink: "https://play.google.com/store/apps/details?id=com.randomlogicgames.cramagram&hl=en",
+        links: [
+          { name: "iOS", url: "https://apps.apple.com/us/app/cramagram-anagram-crossword/id6502916798" },
+          { name: "Android", url: "https://play.google.com/store/apps/details?id=com.randomlogicgames.cramagram&hl=en" }
+        ],
         color: "yellow"
       }
     ]
@@ -75,20 +86,26 @@ export const workProjects: Project[] = [
     storeLinks: [
       {
         text: "Looking For Aliens",
-        iosLink: "https://apps.apple.com/us/app/looking-for-aliens/id6670402289",
-        androidLink: "https://play.google.com/store/apps/details?id=com.pid.lfa&hl=en",
+        links: [
+          { name: "iOS", url: "https://apps.apple.com/us/app/looking-for-aliens/id6670402289" },
+          { name: "Android", url: "https://play.google.com/store/apps/details?id=com.pid.lfa&hl=en" }
+        ],
         color: "blue"
       },
       {
         text: "Metal Slug Tactics",
-        iosLink: "https://apps.apple.com/us/app/crunchyroll-metal-slug-tactics/id6742414459",
-        androidLink: "https://play.google.com/store/apps/details?id=com.crunchyroll.gv.metalslugtactics.game&hl=en",
+        links: [
+          { name: "iOS", url: "https://apps.apple.com/us/app/crunchyroll-metal-slug-tactics/id6742414459" },
+          { name: "Android", url: "https://play.google.com/store/apps/details?id=com.crunchyroll.gv.metalslugtactics.game&hl=en" }
+        ],
         color: "red"
       },
       {
         text: "Beholder: Conductor",
-        iosLink: "https://apps.apple.com/app/looking-for-aliens/id1234567890",
-        androidLink: "https://play.google.com/store/apps/details?id=com.example.aliens",
+        links: [
+          { name: "iOS", url: "https://apps.apple.com/app/looking-for-aliens/id1234567890" },
+          { name: "Android", url: "https://play.google.com/store/apps/details?id=com.example.aliens" }
+        ],
         color: "yellow"
       }
     ]
