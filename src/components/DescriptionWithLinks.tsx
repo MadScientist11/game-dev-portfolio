@@ -1,6 +1,5 @@
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Button } from "@/components/ui/button";
-import { Apple, Store } from "lucide-react";
 import { StoreLink } from "@/data/projects";
 
 interface DescriptionWithLinksProps {
@@ -60,7 +59,6 @@ export const DescriptionWithLinks = ({ description, storeLinks, className }: Des
               {earliestMatch.link.androidLink && (
                 <Button asChild variant="ghost" size="sm" className="justify-start hover:bg-primary/10 hover:text-primary transition-colors">
                   <a href={earliestMatch.link.androidLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                    <Store className="w-4 h-4 mr-2" />
                     Android
                   </a>
                 </Button>
@@ -68,7 +66,6 @@ export const DescriptionWithLinks = ({ description, storeLinks, className }: Des
               {earliestMatch.link.iosLink && (
                 <Button asChild variant="ghost" size="sm" className="justify-start hover:bg-primary/10 hover:text-primary transition-colors">
                   <a href={earliestMatch.link.iosLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                    <Apple className="w-4 h-4 mr-2" />
                     iOS
                   </a>
                 </Button>
