@@ -37,7 +37,7 @@ export const workProjects: Project[] = [
       {
         text: "Biped 2",
         links: [
-          { name: "Steam", url: "https://store.steampowered.com/app/1726980/Biped_2/" },
+          { name: "Steam", url: "https://store.steampowered.com/app/2560240/Biped_2/" },
         ],
         color: "blue"
       }
@@ -134,17 +134,17 @@ export const workProjects: Project[] = [
       }
     ]
   },
-  {
-    id: "souls-like",
-    title: "Souls Like",
-    role: "Unity Developer",
-    description: "A pet project of mine.",
-    responsibilities: [
-      "Designed and implemented custom character controller with advanced movement mechanics",
-    ],
-    technologies: ["Unity", "C#", "Shader Lab", "ProBuilder"],
-    image: "/placeholder.svg",
-    link: "",
-  },
+  // {
+  //   id: "souls-like",
+  //   title: "Souls Like",
+  //   role: "Unity Developer",
+  //   description: "A pet project of mine.",
+  //   responsibilities: [
+  //     "Designed and implemented custom character controller with advanced movement mechanics",
+  //   ],
+  //   technologies: ["Unity", "C#", "Shader Lab", "ProBuilder"],
+  //   image: "/placeholder.svg",
+  //   link: "",
+  // },
 ];
 
