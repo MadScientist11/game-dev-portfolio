@@ -28,9 +28,10 @@ export const workProjects: Project[] = [
       "Was responsible for ensuring compliance with Technical Requirements Checklists (TRCs/Lotcheck/XRs) on PS4, PS5, Nintendo Switch, and Xbox platforms.",
       "Took on a major part of the console porting process, adapting the game’s systems to run smoothly on each platform and ensuring cross-platform compatibility.",
       "Contributed to the integration of Epic Online Services (EOS) assisting with debugging and resolving issues and crashes in core multiplayer systems.",
-      "Assisted with the integration of Steam, GOG, and EGS SDKs."
+      "Assisted with the integration of Steam, GOG, and EGS SDKs.",
+      "Designed and implemented a backend service using ASP.NET Core to collect and manage player bug reports.",
     ],
-    technologies: ["Unity", "Epic Online Services", "Steam", "GOG", "EGS", "Playstation", "Xbox", "Nintendo Switch"],
+    technologies: ["Unity", "Epic Online Services", "Steam", "GOG", "EGS", "Playstation", "Xbox", "Nintendo Switch", "ASP.NET Core", "Nginx"],
     image: "/biped.png",
     link: "",
     storeLinks: [
