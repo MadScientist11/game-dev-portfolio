@@ -34,6 +34,14 @@ const Navigation = () => {
             >
               Projects
             </Link>
+            <Link
+              to="/articles"
+              className={`text-foreground hover:text-primary transition-colors ${
+                isActive("/articles") ? "text-primary font-medium" : ""
+              }`}
+            >
+              Articles
+            </Link>
             <button
               onClick={async () => {
                 try {
