@@ -1,19 +1,15 @@
-export interface Article {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  date: string;
-  readTime: string;
-  tags: string[];
-}
+---
+id: getting-started-with-game-dev
+title: Getting Started with Game Development
+excerpt: A brief introduction to the world of game development and the key concepts every beginner should know.
+date: 2024-01-15
+readTime: 5 min read
+tags:
+  - Game Development
+  - Tutorial
+  - Beginner
+---
 
-export const articles: Article[] = [
-  {
-    id: "example-article",
-    title: "Getting Started with Game Development",
-    excerpt: "A brief introduction to the world of game development and the key concepts every beginner should know.",
-    content: `
 # Getting Started with Game Development
 
 Game development is an exciting field that combines creativity with technical skills. Whether you're interested in creating indie games or working at a major studio, understanding the fundamentals is crucial.
@@ -38,9 +34,3 @@ Games need to simulate real-world physics. Learning about collision detection, r
 5. Practice, practice, practice
 
 The journey of a thousand games begins with a single sprite.
-    `,
-    date: "2024-01-15",
-    readTime: "5 min read",
-    tags: ["Game Development", "Tutorial", "Beginner"]
-  }
-];
