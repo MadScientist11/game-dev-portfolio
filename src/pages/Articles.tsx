@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { X, Clock, Calendar } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import Navigation from "@/components/Navigation";
-import { articles, Article } from "@/data/articles";
+import { articles, Article } from "@/lib/articles";
 import { Badge } from "@/components/ui/badge";
 
 const ArticleCard = ({ 
@@ -110,24 +111,23 @@ const ArticleView = ({
             </div>
             
             <div className="prose prose-invert prose-primary max-w-none">
-              {article.content.split('\n').map((line, index) => {
-                if (line.startsWith('# ')) {
-                  return <h1 key={index} className="text-2xl font-bold text-foreground mt-8 mb-4">{line.slice(2)}</h1>;
-                }
-                if (line.startsWith('## ')) {
-                  return <h2 key={index} className="text-xl font-semibold text-foreground mt-6 mb-3">{line.slice(3)}</h2>;
-                }
-                if (line.startsWith('### ')) {
-                  return <h3 key={index} className="text-lg font-medium text-primary mt-4 mb-2">{line.slice(4)}</h3>;
-                }
-                if (line.match(/^\d+\.\s/)) {
-                  return <p key={index} className="text-muted-foreground ml-4 my-1">{line}</p>;
-                }
-                if (line.trim()) {
-                  return <p key={index} className="text-muted-foreground my-3 leading-relaxed">{line}</p>;
-                }
-                return null;
-              })}
+              <ReactMarkdown
+                components={{
+                  h1: ({ children }) => <h1 className="text-2xl font-bold text-foreground mt-8 mb-4">{children}</h1>,
+                  h2: ({ children }) => <h2 className="text-xl font-semibold text-foreground mt-6 mb-3">{children}</h2>,
+                  h3: ({ children }) => <h3 className="text-lg font-medium text-primary mt-4 mb-2">{children}</h3>,
+                  p: ({ children }) => <p className="text-muted-foreground my-3 leading-relaxed">{children}</p>,
+                  ul: ({ children }) => <ul className="list-disc list-inside text-muted-foreground my-3 space-y-1">{children}</ul>,
+                  ol: ({ children }) => <ol className="list-decimal list-inside text-muted-foreground my-3 space-y-1">{children}</ol>,
+                  li: ({ children }) => <li className="text-muted-foreground">{children}</li>,
+                  a: ({ href, children }) => <a href={href} className="text-primary hover:underline">{children}</a>,
+                  code: ({ children }) => <code className="bg-muted px-1.5 py-0.5 rounded text-sm">{children}</code>,
+                  pre: ({ children }) => <pre className="bg-muted p-4 rounded-lg overflow-x-auto my-4">{children}</pre>,
+                  blockquote: ({ children }) => <blockquote className="border-l-2 border-primary pl-4 italic text-muted-foreground my-4">{children}</blockquote>,
+                }}
+              >
+                {article.content}
+              </ReactMarkdown>
             </div>
           </article>
         </div>
