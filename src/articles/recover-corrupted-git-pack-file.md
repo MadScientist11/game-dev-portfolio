@@ -8,9 +8,7 @@ tags:
   - Git
 ---
 
-# How to Recover Corrupted Git Pack Files
-
-First off, you really want to have a backup project. Recovering a corrupted .pack file without one might be possible, but I’ve done it myself. I did find a link where someone walks through recovering an object from scratch, although it was pretty hard for me to follow.
+First off, you really want to have a backup project. Recovering a corrupted .pack file without one might be possible, but I haven't done it myself. I did find a link where someone walks through recovering an object from scratch, although it was pretty hard for me to follow.
 
 In my case, the project was unclonable, so I went and copied the bare repo from the server and started to experiment. But let’s see the problem first.
 
@@ -75,7 +73,6 @@ while read -r hash; do
   echo "Extracting $hash..."
 
   if git cat-file -p "$hash" > "extracted/$hash.bin" 2>/dev/null; then
-    # sanity check: file is not empty
     if [[ ! -s "extracted/$hash.bin" ]]; then
       echo "EMPTY OUTPUT: $hash"
       mv "extracted/$hash.bin" "failed/$hash.bin"
@@ -169,9 +166,9 @@ Run:
 git repack -ad
 ```
 
-To make sure everything is okay, run `git fsck` one more time. If everything went well, it should no longer complain about unreadable objects.
+To make sure everything is okay, run `git fsck` one more time. If everything went well, it should no longer complain about unreadable objects. At this point, you can either repack the bare repo on the server or push the recovered repo as a new repository.
 
-Finally, here are some links that helped to fix this issue:
+Finally, here are some links that helped me fix this issue:
 
-
-https://git.vger.kernel.narkive.com/6CUFzHrn/how-to-replace-a-single-corrupt-packed-object#post7
+- [How to replace a single corrupt packed object](https://git.vger.kernel.narkive.com/6CUFzHrn/how-to-replace-a-single-corrupt-packed-object#post7)
+- [Recovering a corrupted object](https://www.kernel.org/pub/software/scm/git/docs/howto/recover-corrupted-object-harder.html)
